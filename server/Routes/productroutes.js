@@ -36,20 +36,8 @@ router.post('/', async (req, res) => {
 
 // Route to update a product by ID
 router.put('/:id', getProduct, async (req, res) => {
-    if (req.body.description != null) {
-        res.product.description = req.body.description;
-    }
-    if (req.body.image != null) {
-        res.product.image = req.body.image;
-    }
-    if (req.body.pricing != null) {
-        res.product.pricing = req.body.pricing;
-    }
-    if (req.body.shippingCost != null) {
-        res.product.shippingCost = req.body.shippingCost;
-    }
     try {
-        const updatedProduct = await res.product.save();
+        const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedProduct);
     } catch (err) {
         res.status(400).json({ message: err.message });

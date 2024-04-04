@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Schema 
 const productSchema = new mongoose.Schema({
-    description: {
+        description: {
         type: String,       
         required: true     
     },

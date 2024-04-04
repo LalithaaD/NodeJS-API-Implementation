@@ -1,0 +1,194 @@
+{
+	"id": "19d93008-6d16-4563-838b-f33ce3d1f906",
+	"name": "NodeJS-Product API",
+	"timestamp": "2024-04-04T19:45:01.806Z",
+	"collection_id": "33511578-aa1d25fa-5d7a-4010-afa2-d37b0963c464",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 12,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-04-04T19:45:01.145Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "7e3ca246-8036-4b44-b843-1d45c8430718",
+			"name": "GET Product API",
+			"url": "http://localhost:8081/products",
+			"time": 108,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is of type JSON": true,
+				"Response should contain product details": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is of type JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should contain product details": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				108
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is of type JSON": true,
+					"Response should contain product details": true
+				}
+			]
+		},
+		{
+			"id": "f86a7634-3931-48fd-a9ac-61a4e5cb5a02",
+			"name": "POST Product API",
+			"url": "http://localhost:8081/products",
+			"time": 123,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response is of type JSON": true,
+				"Response should contain product details": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is of type JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should contain product details": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response is of type JSON": true,
+					"Response should contain product details": true
+				}
+			]
+		},
+		{
+			"id": "7b484aef-de16-4ac0-b06a-06b94722aa27",
+			"name": "PUT Product API",
+			"url": "http://localhost:8081/products/1",
+			"time": 4,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response is of type JSON": true,
+				"Response should contain updated product details": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is of type JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should contain updated product details": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response is of type JSON": true,
+					"Response should contain updated product details": true
+				}
+			]
+		},
+		{
+			"id": "39879fed-c39b-4d31-b534-568bcbccc2f6",
+			"name": "DELETE Product API",
+			"url": "http://localhost:8081/products/1",
+			"time": 2,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response is of type JSON": true,
+				"Response should contain success message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is of type JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should contain success message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response is of type JSON": true,
+					"Response should contain success message": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 237,
+	"collection": {
+		"requests": [
+			{
+				"id": "7e3ca246-8036-4b44-b843-1d45c8430718",
+				"method": "GET"
+			},
+			{
+				"id": "f86a7634-3931-48fd-a9ac-61a4e5cb5a02",
+				"method": "POST"
+			},
+			{
+				"id": "7b484aef-de16-4ac0-b06a-06b94722aa27",
+				"method": "PUT"
+			},
+			{
+				"id": "39879fed-c39b-4d31-b534-568bcbccc2f6",
+				"method": "DELETE"
+			}
+		]
+	}
+}
