@@ -1,5 +1,4 @@
-// orderRoutes.js
-
+//Dependencies
 const express = require('express');
 const router = express.Router();
 const Order = require('../models/orderModel');
@@ -30,7 +29,7 @@ router.post('/', async (req, res) => {
     });
     try {
         const newOrder = await order.save();
-        res.status(201).json(newOrder);
+        res.status(201).json(newOrder); // Updated to respond with the created order
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -38,23 +37,8 @@ router.post('/', async (req, res) => {
 
 // Route to update an order by ID
 router.put('/:id', getOrder, async (req, res) => {
-    if (req.body.products != null) {
-        res.order.products = req.body.products;
-    }
-    if (req.body.user != null) {
-        res.order.user = req.body.user;
-    }
-    if (req.body.totalPrice != null) {
-        res.order.totalPrice = req.body.totalPrice;
-    }
-    if (req.body.shippingAddress != null) {
-        res.order.shippingAddress = req.body.shippingAddress;
-    }
-    if (req.body.orderDate != null) {
-        res.order.orderDate = req.body.orderDate;
-    }
     try {
-        const updatedOrder = await res.order.save();
+        const updatedOrder = await Order.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedOrder);
     } catch (err) {
         res.status(400).json({ message: err.message });
@@ -73,17 +57,16 @@ router.delete('/:id', getOrder, async (req, res) => {
 
 // Middleware function to get order by ID
 async function getOrder(req, res, next) {
-    let order;
     try {
-        order = await Order.findById(req.params.id);
-        if (order == null) {
+        const order = await Order.findById(req.params.id);
+        if (!order) {
             return res.status(404).json({ message: 'Order not found' });
         }
+        res.order = order;
+        next();
     } catch (err) {
         return res.status(500).json({ message: err.message });
     }
-    res.order = order;
-    next();
 }
 
 module.exports = router;
