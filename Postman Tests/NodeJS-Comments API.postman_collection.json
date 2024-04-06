@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "9d0eb5d1-c3cb-4cdc-baf9-b10ce6c4b69e",
+		"name": "NodeJS-Comments API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33511578"
+	},
+	"item": [
+		{
+			"name": "GET Comment API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for status code 200 (OK)\r",
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Test for response type JSON\r",
+							"pm.test('Response is of type JSON', function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+							"});\r",
+							"\r",
+							"// Test for the correct status code and structure of the response\r",
+							"pm.test('Get All Comments', function () {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody).to.be.an('array');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Comment API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for status code 201 (Created)\r",
+							"pm.test('Status code is 201', function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"// Test for response type JSON\r",
+							"pm.test('Response is of type JSON', function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+							"});\r",
+							"\r",
+							"// Test for the correct status code and structure of the response\r",
+							"pm.test('Create Comment', function () {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody.product).to.eql(\"6123456789abcdef01234567\");\r",
+							"    pm.expect(responseBody.user).to.eql(\"616a0f8fe873b2a7f83c862e\");\r",
+							"    pm.expect(responseBody.rating).to.eql(5);\r",
+							"    pm.expect(responseBody.image).to.eql(\"example_image3.jpg\");\r",
+							"    pm.expect(responseBody.text).to.eql(\"This is third test comment.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"660dd4af5d70dacd94d27664\",\r\n    \"product\": \"6123456789abcdef01234567\",\r\n    \"user\": \"616a0f8fe873b2a7f83c862e\",\r\n    \"rating\": 5,\r\n    \"image\": \"example_image3.jpg\",\r\n    \"text\": \"This is third test comment.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Comment API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for status code 200 (Created)",
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test for response type JSON",
+							"pm.test('Response is of type JSON', function () {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"});",
+							"",
+							"// Test for the correct status code and structure of the response",
+							"pm.test('Update Comment', function () {",
+							"    const responseBody = pm.response.json();",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"660dd4af5d70dacd94d27664\",\r\n    \"product\": \"6123456789abcdef01234567\",\r\n    \"user\": \"616a0f8fe873b2a7f83c862e\",\r\n    \"rating\": 5,\r\n    \"image\": \"example_image.jpg\",\r\n    \"text\": \"This is a 2test comment.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comment/6610bfdeeffb9f0f9f9403d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment",
+						"6610bfdeeffb9f0f9f9403d8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Comment API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// // Test for status code 204 (No Content)\r",
+							"// pm.test('Status code is 204', function () {\r",
+							"//     pm.response.to.have.status(204);\r",
+							"// });\r",
+							"\r",
+							"// Test for response type JSON\r",
+							"pm.test('Response is of type JSON', function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+							"});\r",
+							"\r",
+							"// Test for the correct status code and structure of the response\r",
+							"pm.test('Delete Comment');\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"_id\": \"6610bfdeeffb9f0f9f9403d8\",\r\n\"product\": \"6123456789abcdef01234567\",\r\n\"user\":\"616a0f8fe873b2a7f83c862e\",\r\n\"rating\":\"5\",\r\n\"image\":\"example_image.jpg\",\r\n\"text\":\"This is a 2test comment.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comment/6610c4aeeffb9f0f9f9403df",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment",
+						"6610c4aeeffb9f0f9f9403df"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
