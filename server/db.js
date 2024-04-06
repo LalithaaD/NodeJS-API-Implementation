@@ -4,9 +4,12 @@ const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-const userRoutes = require("./Routes/userroutes");  //Routes
+//Routes
+const userRoutes = require("./Routes/userroutes");  
 const productRoutes = require("./Routes/productroutes"); 
 const orderRoutes = require("./Routes/orderroutes");
+const cartRoutes = require("./Routes/cartroutes");
+const commentRoutes = require("./Routes/commentroutes");
 
 const app = express();
 
@@ -18,6 +21,9 @@ app.use(bodyParser.json({ type: "application/json" }));
 app.use("/users", userRoutes);
 app.use("/products", productRoutes); 
 app.use("/orders", orderRoutes);
+app.use("/cart", cartRoutes);
+app.use("/comment", commentRoutes);
+
 
 // Database Connection
 mongoose.connect("mongodb+srv://lalithamadhuri3:H293xmZBpvATp96W@cluster0.a5qz4w7.mongodb.net/test?retryWrites=true&w=majority")

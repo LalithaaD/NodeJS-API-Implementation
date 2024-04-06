@@ -1,23 +1,15 @@
-//Dependencies
 const mongoose = require('mongoose');
 
-//Schema
 const cartSchema = new mongoose.Schema({
     products: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-        required: true
+        ref: 'Product'
     }],
-    quantities: [Number],
+    quantities: [Number], // Array to track quantities of each product
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        type: String,
         required: true
     }
 });
 
-//Create a Model
-const Cart = mongoose.model('Cart', cartSchema);
-
-//Export
-module.exports = Cart;
+module.exports = mongoose.model('Cart', cartSchema);

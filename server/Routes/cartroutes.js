@@ -1,8 +1,8 @@
-// cartRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const Cart = require('../models/cartModel');
+const Product = require('../models/productModel');
+const User = require('../models/userModel');
 
 // Route to get all carts
 router.get('/', async (req, res) => {
@@ -36,17 +36,8 @@ router.post('/', async (req, res) => {
 
 // Route to update a cart by ID
 router.put('/:id', getCart, async (req, res) => {
-    if (req.body.products != null) {
-        res.cart.products = req.body.products;
-    }
-    if (req.body.quantities != null) {
-        res.cart.quantities = req.body.quantities;
-    }
-    if (req.body.user != null) {
-        res.cart.user = req.body.user;
-    }
     try {
-        const updatedCart = await res.cart.save();
+        const updatedCart = await Cart.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedCart);
     } catch (err) {
         res.status(400).json({ message: err.message });
