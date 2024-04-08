@@ -1,22 +1,22 @@
 {
-	"id": "bd614181-1d7e-4be0-990b-6cf7d241145a",
+	"id": "2fecbd59-384d-4e52-9099-b4a677fce8d6",
 	"name": "NodeJS-User API",
-	"timestamp": "2024-04-04T15:17:15.585Z",
-	"collection_id": "33511578-31087f6a-2280-4962-84f5-2b071cc81504",
+	"timestamp": "2024-04-08T20:48:00.937Z",
+	"collection_id": "33511578-6aece290-5d5d-4fca-bf19-0240611a07b9",
 	"folder_id": 0,
 	"environment_id": "0",
 	"totalPass": 10,
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2024-04-04T15:17:14.932Z",
+	"startedAt": "2024-04-08T20:48:00.245Z",
 	"totalFail": 0,
 	"results": [
 		{
-			"id": "8c6223d4-c90f-4cb7-81be-52d38dea622a",
+			"id": "6a8c8cf8-b7a1-4d69-8276-483860dfdd3a",
 			"name": "GET User API",
 			"url": "http://localhost:8081/users",
-			"time": 100,
+			"time": 83,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -31,7 +31,7 @@
 				}
 			},
 			"times": [
-				100
+				83
 			],
 			"allTests": [
 				{
@@ -40,21 +40,21 @@
 			]
 		},
 		{
-			"id": "1f085cb0-02b2-4ab1-a950-4cb1d99fbcea",
+			"id": "b907dff6-8661-4eec-8345-185c478eed70",
 			"name": "POST User API",
 			"url": "http://localhost:8081/users",
-			"time": 370,
+			"time": 72,
 			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
+				"code": 201,
+				"name": "Created"
 			},
 			"tests": {
-				"Status code is 400": true,
+				"Status code is 201": true,
 				"Response is of type JSON": true,
-				"Response should contain user details": true
+				"Response body contains created user data": true
 			},
 			"testPassFailCounts": {
-				"Status code is 400": {
+				"Status code is 201": {
 					"pass": 1,
 					"fail": 0
 				},
@@ -62,38 +62,38 @@
 					"pass": 1,
 					"fail": 0
 				},
-				"Response should contain user details": {
+				"Response body contains created user data": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				370
+				72
 			],
 			"allTests": [
 				{
-					"Status code is 400": true,
+					"Status code is 201": true,
 					"Response is of type JSON": true,
-					"Response should contain user details": true
+					"Response body contains created user data": true
 				}
 			]
 		},
 		{
-			"id": "f1898ad3-2a4a-4ed5-8f77-6f08a7041ab4",
+			"id": "a7fd0ad1-2fd0-4050-91a3-9dce0e494d16",
 			"name": "PUT User API",
-			"url": "http://localhost:8081/users/1",
-			"time": 4,
+			"url": "http://localhost:8081/users/660ebada5d70dacd94d2766e",
+			"time": 137,
 			"responseCode": {
-				"code": 500,
-				"name": "Internal Server Error"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Status code is 500": true,
+				"Status code is 200": true,
 				"Response is of type JSON": true,
-				"Response should contain updated user details": true
+				"Response should contain updated user data": true
 			},
 			"testPassFailCounts": {
-				"Status code is 500": {
+				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
 				},
@@ -101,38 +101,38 @@
 					"pass": 1,
 					"fail": 0
 				},
-				"Response should contain updated user details": {
+				"Response should contain updated user data": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				4
+				137
 			],
 			"allTests": [
 				{
-					"Status code is 500": true,
+					"Status code is 200": true,
 					"Response is of type JSON": true,
-					"Response should contain updated user details": true
+					"Response should contain updated user data": true
 				}
 			]
 		},
 		{
-			"id": "bd9412a0-024e-42c5-a70f-06f48f83fbd6",
+			"id": "b36472fe-bb47-4d61-ae5b-01b185d51016",
 			"name": "DELETE User API",
-			"url": "http://localhost:8081/users/1",
-			"time": 2,
+			"url": "http://localhost:8081/users/660ebb365d70dacd94d27674",
+			"time": 72,
 			"responseCode": {
-				"code": 500,
-				"name": "Internal Server Error"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Status code is 500": true,
+				"Status code is 200": true,
 				"Response is of type JSON": true,
 				"Response should contain deleted user details": true
 			},
 			"testPassFailCounts": {
-				"Status code is 500": {
+				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
 				},
@@ -146,11 +146,11 @@
 				}
 			},
 			"times": [
-				2
+				72
 			],
 			"allTests": [
 				{
-					"Status code is 500": true,
+					"Status code is 200": true,
 					"Response is of type JSON": true,
 					"Response should contain deleted user details": true
 				}
@@ -158,23 +158,23 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 476,
+	"totalTime": 364,
 	"collection": {
 		"requests": [
 			{
-				"id": "8c6223d4-c90f-4cb7-81be-52d38dea622a",
+				"id": "6a8c8cf8-b7a1-4d69-8276-483860dfdd3a",
 				"method": "GET"
 			},
 			{
-				"id": "1f085cb0-02b2-4ab1-a950-4cb1d99fbcea",
+				"id": "b907dff6-8661-4eec-8345-185c478eed70",
 				"method": "POST"
 			},
 			{
-				"id": "f1898ad3-2a4a-4ed5-8f77-6f08a7041ab4",
+				"id": "a7fd0ad1-2fd0-4050-91a3-9dce0e494d16",
 				"method": "PUT"
 			},
 			{
-				"id": "bd9412a0-024e-42c5-a70f-06f48f83fbd6",
+				"id": "b36472fe-bb47-4d61-ae5b-01b185d51016",
 				"method": "DELETE"
 			}
 		]

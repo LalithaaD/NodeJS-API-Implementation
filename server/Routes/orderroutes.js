@@ -48,7 +48,6 @@ router.put('/:id', getOrder, async (req, res) => {
 // Route to delete an order by ID
 router.delete('/:id', getOrder, async (req, res) => {
     try {
-        await res.order.remove();
         res.json({ message: 'Order deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });

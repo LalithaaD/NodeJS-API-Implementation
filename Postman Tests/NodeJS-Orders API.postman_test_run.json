@@ -1,22 +1,22 @@
 {
-	"id": "742b367b-8bf5-4a33-be36-f357090c560e",
+	"id": "13847845-c9dd-457a-aa69-bc7f48537cef",
 	"name": "NodeJS-Orders API",
-	"timestamp": "2024-04-05T00:38:50.098Z",
+	"timestamp": "2024-04-08T20:26:35.255Z",
 	"collection_id": "33511578-8387296a-e8ed-4bda-9abc-8d5cc5437cc1",
 	"folder_id": 0,
 	"environment_id": "0",
-	"totalPass": 11,
+	"totalPass": 12,
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2024-04-05T00:38:49.720Z",
+	"startedAt": "2024-04-08T20:26:34.482Z",
 	"totalFail": 0,
 	"results": [
 		{
 			"id": "33fc15d8-ad43-4761-b13f-92141fd05f95",
 			"name": "GET Order API",
 			"url": "http://localhost:8081/orders",
-			"time": 85,
+			"time": 78,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -41,7 +41,7 @@
 				}
 			},
 			"times": [
-				85
+				78
 			],
 			"allTests": [
 				{
@@ -55,7 +55,7 @@
 			"id": "3eb57d53-ffa0-4d7d-8cfd-e0cbf5b48aab",
 			"name": "POST Order API",
 			"url": "http://localhost:8081/orders",
-			"time": 79,
+			"time": 99,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -80,7 +80,7 @@
 				}
 			},
 			"times": [
-				79
+				99
 			],
 			"allTests": [
 				{
@@ -93,19 +93,19 @@
 		{
 			"id": "4ac09828-9a1a-4d78-9f68-eb13674ce579",
 			"name": "PUT Order API",
-			"url": "http://localhost:8081/orders/1",
-			"time": 3,
+			"url": "http://localhost:8081/orders/660f4210b2549c71b67b0142",
+			"time": 141,
 			"responseCode": {
-				"code": 500,
-				"name": "Internal Server Error"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Status code is 500": true,
+				"Status code is 200": true,
 				"Response is of type JSON": true,
-				"Response should contain updated user details": true
+				"Response body contains updated cart data": true
 			},
 			"testPassFailCounts": {
-				"Status code is 500": {
+				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
 				},
@@ -113,58 +113,64 @@
 					"pass": 1,
 					"fail": 0
 				},
-				"Response should contain updated user details": {
+				"Response body contains updated cart data": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				3
+				141
 			],
 			"allTests": [
 				{
-					"Status code is 500": true,
+					"Status code is 200": true,
 					"Response is of type JSON": true,
-					"Response should contain updated user details": true
+					"Response body contains updated cart data": true
 				}
 			]
 		},
 		{
 			"id": "895a6874-766d-44d8-a0b6-43f871809c0b",
 			"name": "DELETE Order API",
-			"url": "http://localhost:8081/orders",
-			"time": 1,
+			"url": "http://localhost:8081/orders/660f47e1b2549c71b67b0147",
+			"time": 74,
 			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Status code is 404": true,
-				"Delete Order": true
+				"Status code is 200": true,
+				"Response is of type JSON": true,
+				"Delete Comment": true
 			},
 			"testPassFailCounts": {
-				"Status code is 404": {
+				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
 				},
-				"Delete Order": {
+				"Response is of type JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Delete Comment": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				1
+				74
 			],
 			"allTests": [
 				{
-					"Status code is 404": true,
-					"Delete Order": true
+					"Status code is 200": true,
+					"Response is of type JSON": true,
+					"Delete Comment": true
 				}
 			]
 		}
 	],
 	"count": 1,
-	"totalTime": 168,
+	"totalTime": 392,
 	"collection": {
 		"requests": [
 			{

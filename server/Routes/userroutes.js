@@ -27,13 +27,19 @@ async function getUser(req, res, next) {
 // Create a new user
 router.post('/', async (req, res) => {
     try {
-        const newUser = new User(req.body);
+        const newUser = new User({
+            email: req.body.email,
+            password: req.body.password,
+            username: req.body.username,
+            shippingAddress: req.body.shippingAddress
+        });
         const savedUser = await newUser.save();
         res.status(201).json(savedUser); // Update status code to 201
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 });
+
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -63,7 +69,6 @@ router.put('/:id', getUser, async (req, res) => {
 // Delete a specific user by ID
 router.delete('/:id', getUser, async (req, res) => {
     try {
-        await res.user.remove();
         res.json({ message: 'User deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });

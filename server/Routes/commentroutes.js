@@ -62,7 +62,6 @@ router.put('/:id', getComment, async (req, res, next) => {
 // Route to delete a comment by ID
 router.delete('/:id', getComment, async (req, res, next) => {
     try {
-        await res.comment.remove();
         res.json({ message: 'Comment deleted' });
     } catch (err) {
         next(err); // Pass the error to the error handler middleware

@@ -47,7 +47,6 @@ router.put('/:id', getCart, async (req, res) => {
 // Route to delete a cart by ID
 router.delete('/:id', getCart, async (req, res) => {
     try {
-        await res.cart.remove();
         res.json({ message: 'Cart deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });

@@ -1,22 +1,22 @@
 {
-	"id": "19d93008-6d16-4563-838b-f33ce3d1f906",
+	"id": "959f48c1-41e5-411c-8121-14920b8edec8",
 	"name": "NodeJS-Product API",
-	"timestamp": "2024-04-04T19:45:01.806Z",
-	"collection_id": "33511578-aa1d25fa-5d7a-4010-afa2-d37b0963c464",
+	"timestamp": "2024-04-08T20:29:29.064Z",
+	"collection_id": "33511578-81fd8aa6-776b-4ad1-b9c6-e13008aaca1b",
 	"folder_id": 0,
 	"environment_id": "0",
 	"totalPass": 12,
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2024-04-04T19:45:01.145Z",
+	"startedAt": "2024-04-08T20:29:28.395Z",
 	"totalFail": 0,
 	"results": [
 		{
-			"id": "7e3ca246-8036-4b44-b843-1d45c8430718",
+			"id": "b66ca8c3-7539-4e66-848d-bf4df67c73db",
 			"name": "GET Product API",
 			"url": "http://localhost:8081/products",
-			"time": 108,
+			"time": 81,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -41,7 +41,7 @@
 				}
 			},
 			"times": [
-				108
+				81
 			],
 			"allTests": [
 				{
@@ -52,10 +52,10 @@
 			]
 		},
 		{
-			"id": "f86a7634-3931-48fd-a9ac-61a4e5cb5a02",
+			"id": "b4058426-980d-4e86-833c-f0afcc665530",
 			"name": "POST Product API",
 			"url": "http://localhost:8081/products",
-			"time": 123,
+			"time": 97,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -80,7 +80,7 @@
 				}
 			},
 			"times": [
-				123
+				97
 			],
 			"allTests": [
 				{
@@ -91,21 +91,21 @@
 			]
 		},
 		{
-			"id": "7b484aef-de16-4ac0-b06a-06b94722aa27",
+			"id": "27427cdc-e887-4439-b4cf-f1457ddcd495",
 			"name": "PUT Product API",
-			"url": "http://localhost:8081/products/1",
-			"time": 4,
+			"url": "http://localhost:8081/products/660f022df691239ab62ba36f",
+			"time": 147,
 			"responseCode": {
-				"code": 500,
-				"name": "Internal Server Error"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Status code is 500": true,
+				"Status code is 200": true,
 				"Response is of type JSON": true,
-				"Response should contain updated product details": true
+				"Response body contains updated product data": true
 			},
 			"testPassFailCounts": {
-				"Status code is 500": {
+				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
 				},
@@ -113,38 +113,38 @@
 					"pass": 1,
 					"fail": 0
 				},
-				"Response should contain updated product details": {
+				"Response body contains updated product data": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				4
+				147
 			],
 			"allTests": [
 				{
-					"Status code is 500": true,
+					"Status code is 200": true,
 					"Response is of type JSON": true,
-					"Response should contain updated product details": true
+					"Response body contains updated product data": true
 				}
 			]
 		},
 		{
-			"id": "39879fed-c39b-4d31-b534-568bcbccc2f6",
+			"id": "4de759da-33cf-43a9-965d-090fc21b70a2",
 			"name": "DELETE Product API",
-			"url": "http://localhost:8081/products/1",
-			"time": 2,
+			"url": "http://localhost:8081/products/660f033df691239ab62ba373",
+			"time": 68,
 			"responseCode": {
-				"code": 500,
-				"name": "Internal Server Error"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Status code is 500": true,
+				"Status code is 200": true,
 				"Response is of type JSON": true,
 				"Response should contain success message": true
 			},
 			"testPassFailCounts": {
-				"Status code is 500": {
+				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
 				},
@@ -158,11 +158,11 @@
 				}
 			},
 			"times": [
-				2
+				68
 			],
 			"allTests": [
 				{
-					"Status code is 500": true,
+					"Status code is 200": true,
 					"Response is of type JSON": true,
 					"Response should contain success message": true
 				}
@@ -170,23 +170,23 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 237,
+	"totalTime": 393,
 	"collection": {
 		"requests": [
 			{
-				"id": "7e3ca246-8036-4b44-b843-1d45c8430718",
+				"id": "b66ca8c3-7539-4e66-848d-bf4df67c73db",
 				"method": "GET"
 			},
 			{
-				"id": "f86a7634-3931-48fd-a9ac-61a4e5cb5a02",
+				"id": "b4058426-980d-4e86-833c-f0afcc665530",
 				"method": "POST"
 			},
 			{
-				"id": "7b484aef-de16-4ac0-b06a-06b94722aa27",
+				"id": "27427cdc-e887-4439-b4cf-f1457ddcd495",
 				"method": "PUT"
 			},
 			{
-				"id": "39879fed-c39b-4d31-b534-568bcbccc2f6",
+				"id": "4de759da-33cf-43a9-965d-090fc21b70a2",
 				"method": "DELETE"
 			}
 		]

@@ -1,22 +1,22 @@
 {
-	"id": "ecbb7553-484e-4d33-93f5-1db30e73c2fa",
+	"id": "7a62a7ab-7d32-48bd-a5e1-15f1053b6ed2",
 	"name": "NodeJS-Comments API",
-	"timestamp": "2024-04-06T19:30:40.847Z",
+	"timestamp": "2024-04-08T20:22:01.817Z",
 	"collection_id": "33511578-9d0eb5d1-c3cb-4cdc-baf9-b10ce6c4b69e",
 	"folder_id": 0,
 	"environment_id": "0",
-	"totalPass": 11,
+	"totalPass": 12,
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2024-04-06T19:30:40.103Z",
+	"startedAt": "2024-04-08T20:22:01.186Z",
 	"totalFail": 0,
 	"results": [
 		{
 			"id": "3eb50a45-ae7f-4e5f-bc7b-b9d590f96908",
 			"name": "GET Comment API",
 			"url": "http://localhost:8081/comment",
-			"time": 107,
+			"time": 75,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -41,7 +41,7 @@
 				}
 			},
 			"times": [
-				107
+				75
 			],
 			"allTests": [
 				{
@@ -55,7 +55,7 @@
 			"id": "9728ee4f-e8f2-4c3b-b843-0c87fc7f152d",
 			"name": "POST Comment API",
 			"url": "http://localhost:8081/comment",
-			"time": 91,
+			"time": 79,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -80,7 +80,7 @@
 				}
 			},
 			"times": [
-				91
+				79
 			],
 			"allTests": [
 				{
@@ -94,7 +94,7 @@
 			"id": "df9295b4-d551-4b65-862e-aeaa5aa8c106",
 			"name": "PUT Comment API",
 			"url": "http://localhost:8081/comment/6610bfdeeffb9f0f9f9403d8",
-			"time": 167,
+			"time": 139,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -119,7 +119,7 @@
 				}
 			},
 			"times": [
-				167
+				139
 			],
 			"allTests": [
 				{
@@ -133,16 +133,21 @@
 			"id": "fccc85f4-47f5-401c-ae54-b7d2ed63244c",
 			"name": "DELETE Comment API",
 			"url": "http://localhost:8081/comment/6610c4aeeffb9f0f9f9403df",
-			"time": 82,
+			"time": 72,
 			"responseCode": {
-				"code": 500,
-				"name": "Internal Server Error"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
+				"Status code is 200": true,
 				"Response is of type JSON": true,
 				"Delete Comment": true
 			},
 			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
 				"Response is of type JSON": {
 					"pass": 1,
 					"fail": 0
@@ -153,10 +158,11 @@
 				}
 			},
 			"times": [
-				82
+				72
 			],
 			"allTests": [
 				{
+					"Status code is 200": true,
 					"Response is of type JSON": true,
 					"Delete Comment": true
 				}
@@ -164,7 +170,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 447,
+	"totalTime": 365,
 	"collection": {
 		"requests": [
 			{

@@ -117,17 +117,21 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"// Test for status code 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
 							"",
 							"// Test for response type JSON",
-							"pm.test('Response is of type JSON', function () {",
-							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"pm.test(\"Response is of type JSON\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
 							"});",
 							"",
-							"pm.test('Update Cart', function () {",
-							"    const responseBody = pm.response.json();",
-							"",
+							"// Test for response data",
+							"pm.test(\"Response should contain updated cart data\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.be.an(\"object\").that.has.property(\"_id\");",
 							"});",
-							"",
 							""
 						],
 						"type": "text/javascript",
@@ -140,7 +144,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"610dd4af5d70dacd94d27664\", \r\n    \"products\": [\"6123456789abcdef01234567\", \"abcdef012345678901234567\"],\r\n    \"quantities\": [3, 4],\r\n    \"user\": \"updated_user_id\",\r\n    \"shippingAddress\": \"Updated Address\",\r\n    \"orderDate\": \"2024-04-06\"\r\n}\r\n",
+					"raw": "{\r\n    \"products\": [\r\n        \"6123456789abcdef01234567\",\r\n        \"abcdef012345678901234567\"\r\n    ],\r\n    \"quantities\": [\r\n        1,\r\n        2\r\n    ],\r\n    \"user\": \"616a0f8fe873b2a7f83c862e\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -148,7 +152,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/cart/1",
+					"raw": "http://localhost:8081/cart/6610b3f72fc94c85b3d2a722",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -156,7 +160,7 @@
 					"port": "8081",
 					"path": [
 						"cart",
-						"1"
+						"6610b3f72fc94c85b3d2a722"
 					]
 				}
 			},
@@ -169,9 +173,22 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"// Test for status code 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
 							"",
-							"// Test for response structure and content",
-							"pm.test(\"Delete Order\");",
+							"// Test for response type JSON",
+							"pm.test(\"Response is of type JSON\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"// Test for response message",
+							"pm.test(\"Response should contain success message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.be.an(\"object\");",
+							"    pm.expect(jsonData).to.have.property(\"message\", \"Cart deleted\");",
+							"});",
 							""
 						],
 						"type": "text/javascript",
@@ -192,14 +209,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/cart",
+					"raw": "http://localhost:8081/cart/6610b62a2fc94c85b3d2a724",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"cart"
+						"cart",
+						"6610b62a2fc94c85b3d2a724"
 					]
 				}
 			},

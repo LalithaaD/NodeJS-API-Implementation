@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "31087f6a-2280-4962-84f5-2b071cc81504",
+		"_postman_id": "6aece290-5d5d-4fca-bf19-0240611a07b9",
 		"name": "NodeJS-User API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33511578"
@@ -62,24 +62,28 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Test for status code 201\r",
-							"pm.test(\"Status code is 400\", function () {\r",
-							"    pm.response.to.have.status(400);\r",
-							"});\r",
+							" // Test for status code 201\r",
+							"    pm.test(\"Status code is 201\", function () {\r",
+							"        pm.response.to.have.status(201);\r",
+							"    });\r",
+							"    \r",
+							"    // Test for response type JSON\r",
+							"    pm.test(\"Response is of type JSON\", function () {\r",
+							"        pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"    });\r",
+							"    \r",
+							"    // Test for response body\r",
+							"    pm.test(\"Response body contains created user data\", function () {\r",
+							"        var jsonData = pm.response.json();\r",
+							"        pm.expect(jsonData).to.be.an(\"object\");\r",
+							"        pm.expect(jsonData).to.have.property(\"email\", \"123456usesecondnique@example.com\");\r",
+							"        pm.expect(jsonData).to.have.property(\"username\", \"unique_user2\");\r",
+							"        pm.expect(jsonData).to.have.property(\"shippingAddress\", \"1231 Unique Street\");\r",
 							"\r",
-							"// Test for response type JSON\r",
-							"pm.test(\"Response is of type JSON\", function () {\r",
-							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
-							"});\r",
-							"\r",
-							"// Test for response structure and content\r",
-							"pm.test(\"Response should contain user details\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData).to.be.an(\"object\")\r",
-							"});\r",
-							""
+							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -88,7 +92,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"660dd4af5d70dacd94d27664\",\r\n    \"email\": \"secondunique@example.com\",\r\n    \"password\": \"secondpassword123\",\r\n    \"username\": \"unique_user2\",\r\n    \"purchaseHistory\": [],\r\n    \"shippingAddress\": \"1231 Unique Street\"\r\n}\r\n",
+					"raw": "{\r\n    \"email\": \"123456usesecondnique@example.com\",\r\n    \"password\": \"secondpassword123\",\r\n    \"username\": \"unique_user2\",\r\n    \"shippingAddress\": \"1231 Unique Street\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -116,9 +120,9 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Test for status code 500\r",
-							"pm.test(\"Status code is 500\", function () {\r",
-							"    pm.response.to.have.status(500);\r",
+							"// Test for status code 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
 							"// Test for response type JSON\r",
@@ -126,16 +130,15 @@
 							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
 							"});\r",
 							"\r",
-							"// Test for response structure and content\r",
-							"pm.test(\"Response should contain updated user details\", function () {\r",
+							"// Test for response data\r",
+							"pm.test(\"Response should contain updated user data\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData).to.be.an(\"object\");\r",
-							"    pm.expect(jsonData).to.not.have.property(\"_id\"); // User ID might not be present in the error response\r",
-							"    pm.expect(jsonData).to.have.property(\"message\", \"Cast to ObjectId failed for value \\\"1\\\" (type string) at path \\\"_id\\\" for model \\\"User\\\"\");\r",
+							"    pm.expect(jsonData).to.be.an(\"object\").that.has.property(\"_id\");\r",
 							"});\r",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -144,7 +147,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"660dd4af5d70dacd94d27664\",\r\n    \"email\": \"updated@example.com\",\r\n    \"password\": \"updatedpassword123\",\r\n    \"username\": \"updated_user\",\r\n    \"purchaseHistory\": [\"order1\", \"order2\"],\r\n    \"shippingAddress\": \"Updated Street 123\"\r\n}\r\n",
+					"raw": "{\r\n    \"email\": \"usecondnique121@example.com\",\r\n    \"password\": \"3secondpassword123\",\r\n    \"username\": \"unique_user27\",\r\n    \"shippingAddress\": \"12312 Unique Street\",\r\n    \"purchaseHistory\": []\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,7 +155,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/users/1",
+					"raw": "http://localhost:8081/users/660ebada5d70dacd94d2766e",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -160,7 +163,7 @@
 					"port": "8081",
 					"path": [
 						"users",
-						"1"
+						"660ebada5d70dacd94d2766e"
 					]
 				}
 			},
@@ -173,9 +176,9 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Test for status code 500\r",
-							"pm.test(\"Status code is 500\", function () {\r",
-							"    pm.response.to.have.status(500);\r",
+							"// Test for status code 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
 							"// Test for response type JSON\r",
@@ -190,7 +193,8 @@
 							"});\r",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -199,7 +203,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"1\"\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -207,7 +211,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/users/1",
+					"raw": "http://localhost:8081/users/660ebb365d70dacd94d27674",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -215,7 +219,7 @@
 					"port": "8081",
 					"path": [
 						"users",
-						"1"
+						"660ebb365d70dacd94d27674"
 					]
 				}
 			},

@@ -185,10 +185,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// // Test for status code 204 (No Content)\r",
-							"// pm.test('Status code is 204', function () {\r",
-							"//     pm.response.to.have.status(204);\r",
-							"// });\r",
+							"// Test for status code 204 (No Content)\r",
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
 							"\r",
 							"// Test for response type JSON\r",
 							"pm.test('Response is of type JSON', function () {\r",
