@@ -1,14 +1,19 @@
-****NodeJS API Implementation with the MongoDB :****
+# NodeJS API Implementation with the MongoDB 
 
-**Server Details:** 
+# Server Details:  
 
 **Server:** NodeJS
+
 **Client:** Postman 
+
 **Database:** MongoDB
 
-**Task Description:** The task involves creating a Node.js implementation of the server components to facilitate communication between the JavaScript client described in Assignment 1 and a MongoDB database instance.
+# Task Description:
 
-**Database Entities:**
+The task involves creating a Node.js implementation of the server components to facilitate communication between the JavaScript client described in Assignment 1 and a MongoDB database instance.
+
+# Database Entities:
+
 **Product:** Contains fields for description, image, pricing, and shipping cost. 
 
 **User:** Includes fields for email, password, username, purchase history, and shipping address. 
@@ -20,6 +25,10 @@
 **Order:**  Includes fields such as user_id, product_id, quantity, etc., to record a sale.
 
 
-**Testing:** A comprehensive validation of the API endpoints has been conducted using Postman and Swagger to ensure their robustness and reliability under various scenarios.
+# Testing:
 
-**Testing Endpoints:** Utilized Postman to send requests to the implemented API endpoints. Validated the functionality of CRUD operations for each entity in the database.
+A comprehensive validation of the API endpoints has been conducted using Postman and Swagger to ensure their robustness and reliability under various scenarios.
+
+# Testing Endpoints: 
+
+Utilized Postman to send requests to the implemented API endpoints. Validated the functionality of CRUD operations for each entity in the database.
